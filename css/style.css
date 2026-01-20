@@ -181,9 +181,9 @@ p {
 }
 
 .site-name-hebrew {
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 300;
   color: var(--color-text-black);
   margin: 0;
 }
@@ -298,7 +298,7 @@ p {
    ================================= */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -322,7 +322,7 @@ p {
 
 /* Adjust focal point for page-hero (Rabbi Amsellem page) */
 .page-hero .hero-parallax-bg {
-  background-position: center 30%;
+  background-position: center 15%;
 }
 
 .hero::before {
@@ -768,6 +768,46 @@ p {
   background-color: #333;
 }
 
+/* Form Selector (Contact Page) */
+.form-selector {
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid #eee;
+}
+
+.form-selector label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--color-text-black);
+}
+
+.form-type-dropdown {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: var(--color-bg-white);
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.form-type-dropdown:focus {
+  outline: none;
+  border-color: var(--color-secondary);
+}
+
+/* Hide non-active forms */
+.contact-form-type {
+  display: none;
+}
+
+.contact-form-type.active {
+  display: block;
+}
+
 /* =================================
    Get Involved Page
    ================================= */
@@ -800,10 +840,13 @@ p {
 }
 
 .involve-card {
+  display: block;
   border-radius: var(--border-radius);
   overflow: hidden;
   box-shadow: var(--shadow-md);
   transition: all var(--transition-normal);
+  text-decoration: none;
+  color: inherit;
 }
 
 .involve-card:hover {
@@ -832,7 +875,12 @@ p {
 }
 
 .involve-card-content.light {
-  background-color: var(--color-donate-bg);
+  background-color: var(--color-bg-white);
+  color: var(--color-text-black);
+}
+
+.involve-card-content.light h3 {
+  color: var(--color-text-black);
 }
 
 .involve-card-content h3 {

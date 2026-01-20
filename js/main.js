@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Parallax Effect for Hero Section
   initParallaxHero();
+
+  // Contact Form Switcher
+  initContactFormSwitcher();
 });
 
 /**
@@ -119,7 +122,7 @@ function initParallaxHero() {
   parallaxBg.style.backgroundSize = 'cover';
   // Adjust focal point for page-hero (higher up on face)
   const isPageHero = hero.classList.contains('page-hero');
-  parallaxBg.style.backgroundPosition = isPageHero ? 'center 30%' : 'center';
+  parallaxBg.style.backgroundPosition = isPageHero ? 'center 15%' : 'center';
   parallaxBg.style.backgroundRepeat = 'no-repeat';
   parallaxBg.style.position = 'absolute';
   parallaxBg.style.top = '0';
@@ -196,5 +199,43 @@ function initContactForm() {
         alert('Please fill in all required fields.');
       }
     });
+  }
+}
+
+/**
+ * Contact Form Switcher - handles multiple form types
+ */
+function initContactFormSwitcher() {
+  const formTypeDropdown = document.getElementById('form-type');
+  const forms = document.querySelectorAll('.contact-form-type');
+
+  if (!formTypeDropdown || forms.length === 0) return;
+
+  // Get form type from URL parameter
+  const urlParams = new URLSearchParams(window.location.search);
+  const formParam = urlParams.get('form');
+
+  // Set initial form based on URL parameter
+  if (formParam) {
+    switchToForm(formParam);
+    formTypeDropdown.value = formParam;
+  }
+
+  // Handle dropdown change
+  formTypeDropdown.addEventListener('change', function() {
+    switchToForm(this.value);
+  });
+
+  function switchToForm(formType) {
+    // Hide all forms
+    forms.forEach(function(form) {
+      form.classList.remove('active');
+    });
+
+    // Show selected form
+    const targetForm = document.getElementById('form-' + formType);
+    if (targetForm) {
+      targetForm.classList.add('active');
+    }
   }
 }
