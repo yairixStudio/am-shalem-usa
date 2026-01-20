@@ -6,48 +6,67 @@
   <meta name="description" content="Get involved with Am Shalem - Learn how you can make a difference through volunteering, donations, and raising awareness.">
   <meta name="keywords" content="Am Shalem, Get Involved, Volunteer, Donate, Jewish Community">
   <meta name="author" content="Am Shalem">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.am-shalem.com/get-involved.html">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Get Involved | Am Shalem">
   <meta property="og:description" content="Take part and make a difference with Am Shalem.">
-  <meta property="og:image" content="assets/images/logo.png">
-  <meta property="og:url" content="https://www.am-shalem.com/get-involved">
+  <meta property="og:image" content="https://www.am-shalem.com/assets/images/logo.png">
+  <meta property="og:url" content="https://www.am-shalem.com/get-involved.html">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Am Shalem">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Get Involved | Am Shalem">
+  <meta name="twitter:description" content="Take part and make a difference with Am Shalem.">
+  <meta name="twitter:image" content="https://www.am-shalem.com/assets/images/logo.png">
 
   <title>Get Involved | Am Shalem</title>
 
-  <!-- Google Fonts -->
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="apple-touch-icon" href="assets/images/logo.png">
+
+  <!-- Preconnect & Preload -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="css/style.css" as="style">
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- Skip to main content link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- Header -->
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="header-top">
       <a href="index.html" class="logo-container">
-        <span class="site-name-hebrew">עם שלם</span>
+        <span class="site-name-hebrew" lang="he">עם שלם</span>
         <img src="assets/images/logo.png" alt="Am Shalem Logo">
         <span class="site-name">Am Shalem</span>
       </a>
     </div>
 
-    <nav class="main-nav">
+    <nav class="main-nav" role="navigation" aria-label="Main navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="get-involved.html" class="active">Get Involved</a></li>
-        <li><a href="https://www.paypal.com/donate" class="donate-btn" target="_blank" rel="noopener noreferrer">Donate</a></li>
+        <li><a href="get-involved.html" class="active" aria-current="page">Get Involved</a></li>
+        <li><a href="https://www.paypal.com/donate" class="donate-btn" target="_blank" rel="noopener noreferrer" aria-label="Donate (opens in new tab)">Donate</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- Main Content -->
-  <main>
+  <main id="main-content" role="main">
     <!-- Hero Section -->
     <section class="get-involved-hero">
       <div class="container">
@@ -57,12 +76,13 @@
     </section>
 
     <!-- Cards Section -->
-    <section class="get-involved-cards">
+    <section class="get-involved-cards" aria-labelledby="ways-to-help-heading">
+      <h2 id="ways-to-help-heading" class="visually-hidden">Ways to Get Involved</h2>
       <div class="container">
         <div class="involve-cards-grid">
           <!-- Card 1: Raise Awareness -->
-          <a href="contact.html?form=member" class="involve-card">
-            <img src="assets/images/raise-awareness.png" alt="Raise Awareness" class="involve-card-image">
+          <a href="contact.html?form=member" class="involve-card" aria-label="Raise Awareness - Become an Active Member">
+            <img src="assets/images/raise-awareness.png" alt="" class="involve-card-image" width="300" height="200" loading="lazy" aria-hidden="true">
             <div class="involve-card-content light">
               <h3>RAISE AWARENESS</h3>
               <p>Become an Active Member</p>
@@ -70,8 +90,8 @@
           </a>
 
           <!-- Card 2: Volunteer -->
-          <a href="contact.html?form=volunteer" class="involve-card">
-            <img src="assets/images/volunteer.png" alt="Volunteer" class="involve-card-image">
+          <a href="contact.html?form=volunteer" class="involve-card" aria-label="Volunteer - Every Contribution Counts">
+            <img src="assets/images/volunteer.png" alt="" class="involve-card-image" width="300" height="200" loading="lazy" aria-hidden="true">
             <div class="involve-card-content light">
               <h3>VOLUNTEER</h3>
               <p>Every Contribution Counts</p>
@@ -79,8 +99,8 @@
           </a>
 
           <!-- Card 3: Make a Donation -->
-          <a href="https://www.paypal.com/donate" target="_blank" rel="noopener noreferrer" class="involve-card">
-            <img src="assets/images/get-involved-3.png" alt="Make a Donation" class="involve-card-image">
+          <a href="https://www.paypal.com/donate" target="_blank" rel="noopener noreferrer" class="involve-card" aria-label="Make a Donation - Be a Part of Real Change (opens in new tab)">
+            <img src="assets/images/get-involved-3.png" alt="" class="involve-card-image" width="300" height="200" loading="lazy" aria-hidden="true">
             <div class="involve-card-content light">
               <h3>MAKE A DONATION</h3>
               <p>Be a Part of Real Change</p>
@@ -91,23 +111,24 @@
     </section>
 
     <!-- Newsletter Section -->
-    <section class="newsletter-section">
+    <section class="newsletter-section" aria-labelledby="newsletter-heading-involve">
       <div class="container">
-        <h5>Subscribe our newsletter</h5>
-        <form class="newsletter-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-          <input type="email" name="email" placeholder="e.g., email@example.com" required>
+        <h5 id="newsletter-heading-involve">Subscribe to our newsletter</h5>
+        <form class="newsletter-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" aria-label="Newsletter signup form">
+          <label for="newsletter-email-involve" class="visually-hidden">Email address</label>
+          <input type="email" id="newsletter-email-involve" name="email" placeholder="e.g., email@example.com" required autocomplete="email">
           <button type="submit" class="btn-dark">Join</button>
         </form>
-        <p class="newsletter-success">Thanks for subscribing!</p>
+        <p class="newsletter-success" role="status" aria-live="polite">Thanks for subscribing!</p>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="footer-content">
       <div class="footer-contact">
-        <a href="mailto:contact@am-shalem.com" class="email-link">contact@am-shalem.com</a>
+        <a href="mailto:contact@am-shalem.com" class="email-link" aria-label="Email us at contact@am-shalem.com">contact@am-shalem.com</a>
         <p class="footer-address">1756 East 5th street, Brooklyn, NY 11223</p>
       </div>
 
@@ -118,7 +139,7 @@
     </div>
   </footer>
 
-  <!-- JavaScript -->
-  <script src="js/main.js"></script>
+  <!-- JavaScript (deferred for performance) -->
+  <script src="js/main.js" defer></script>
 </body>
 </html>

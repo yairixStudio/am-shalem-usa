@@ -54,6 +54,87 @@ html {
   scroll-behavior: smooth;
 }
 
+/* =================================
+   Accessibility Utilities
+   ================================= */
+
+/* Skip Link - Hidden until focused */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--color-text-black);
+  color: white;
+  padding: 8px 16px;
+  z-index: 10000;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 0 0 var(--border-radius) 0;
+  transition: top var(--transition-fast);
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  top: 0;
+  clip: auto;
+  overflow: visible;
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Visually Hidden - Screen reader only */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus Styles for Accessibility */
+:focus-visible {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+/* Ensure form inputs have light background */
+input,
+textarea,
+select {
+  background-color: var(--color-bg-white);
+  color: var(--color-text-dark);
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-parallax-bg {
+    transform: none !important;
+  }
+}
+
 body {
   font-family: var(--font-body);
   font-size: 16px;
@@ -364,9 +445,9 @@ p {
 
 .page-hero h1 {
   font-size: 3rem;
-  font-style: normal;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: normal;
 }
 
 /* =================================
@@ -1029,6 +1110,7 @@ p {
 
   .page-hero h1 {
     font-size: 2rem;
+    font-style: italic;
   }
 }
 
